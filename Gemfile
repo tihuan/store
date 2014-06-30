@@ -1,5 +1,14 @@
 source 'https://rubygems.org'
 
+gem 'unicorn'
+gem 'yui-compressor'
+
+# Embed the V8 Javascript Interpreter into Ruby for LESS/Bootstrap
+gem "therubyracer"
+gem 'libv8'
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem 'twitter-bootstrap-rails'
+gem 'font-awesome-sass'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
@@ -38,3 +47,36 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :test, :development do
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-remote'
+  gem 'pry-stack_explorer'
+  gem 'pry-debugger'
+  gem 'rspec-rails'
+  gem 'shoulda'
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'simplecov', '~> 0.8.0',  :require => false
+  gem 'faker'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'launchy'
+  gem 'shoulda'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
+end
+
+group :cucumber do
+  gem 'capybara'           # better than webrat
+  gem 'database_cleaner'   # clean database between tests
+  gem 'cucumber-rails'
+  gem 'cucumber'
+  gem 'rspec-rails'
+  gem 'spork'
+  gem 'factory_girl_rails'
+end
+
+gem 'rails_12factor', group: :production
