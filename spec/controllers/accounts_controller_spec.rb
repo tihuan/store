@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AccountsController do
+describe AccountsController, type: :controller do
   let!(:account1) { FactoryGirl.create(:account) }
   let!(:account2) { FactoryGirl.create(:account) }
 

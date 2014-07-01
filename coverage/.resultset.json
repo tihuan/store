@@ -1,11 +1,37 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/timmyhuang/Desktop/store/app/helpers/accounts_helper.rb": [
+        1,
+        null
+      ],
       "/Users/timmyhuang/Desktop/store/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/timmyhuang/Desktop/store/app/controllers/accounts_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/timmyhuang/Desktop/store/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/timmyhuang/Desktop/store/app/models/account.rb": [
         1,
         null
       ]
     },
-    "timestamp": 1404195079
+    "timestamp": 1404196299
   }
 }
