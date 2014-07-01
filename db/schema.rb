@@ -17,8 +17,18 @@ ActiveRecord::Schema.define(version: 20140701062115) do
   enable_extension "plpgsql"
 
   create_table "accounts", force: true do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "address"
+    t.string   "phone"
+    t.date     "birthdate"
+    t.string   "email"
+    t.text     "memo"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "accounts", ["email"], name: "index_accounts_on_email", unique: true, using: :btree
 
 end

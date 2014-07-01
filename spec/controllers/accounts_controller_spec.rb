@@ -7,7 +7,7 @@ describe AccountsController, type: :controller do
   describe 'GET #index' do
     it "assigns all accounts to @accounts" do
       get :index
-      assigns(:accounts).should eq([account1, account2])
+      expect(assigns(:accounts).last).to eq(account2)
     end
 
     it "renders the :index view" do
@@ -24,7 +24,7 @@ describe AccountsController, type: :controller do
 
     it "assigns the requested city to @city" do
       get :show, id: account1.id
-      assigns(:account).should eq(account1)
+      expect(assigns(:account)).to eq(account1)
     end
   end
 end
