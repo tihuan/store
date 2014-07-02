@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "money" # handles lib/money_attributes module
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'unicorn'
