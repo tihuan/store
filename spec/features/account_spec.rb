@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature "account" do
-  let!(:account) { FactoryGirl.create(:account) }
+  # let!(:account) { FactoryGirl.create(:account) }
 
   scenario "User creates an account" do
     visit root_path

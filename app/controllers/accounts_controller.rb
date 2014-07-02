@@ -8,4 +8,8 @@ class AccountsController < ApplicationController
     @account = Account.find(params[:id])
   end
 
+  def new
+    @account = Account.new
+  end
+
 end
