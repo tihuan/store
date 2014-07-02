@@ -1,1 +1,25 @@
-<p id="create-account-form">Create New Account</p>
+<h3>Create New Account</h3>
+
+<% if flash[:alert] %>
+<h2 class="notice"><%= flash[:alert] %></h2>
+<% end %>
+
+<% if @account.errors.any? %>
+  <ul>
+    <% @account.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @account, html: {id: id='create-account-form'} do |f| %>
+    First name: <%= f.text_field :fname %><br />
+    Last name : <%= f.text_field :lname %><br />
+    Birthday : <%= f.text_field :birthdate %><br />
+    Email : <%= f.text_field :email %><br />
+    Phone : <%= f.text_field :phone %><br />
+    Address : <%= f.text_field :address %><br />
+    Password : <%= f.password_field :password %><br />
+    Memo : <%= f.text_area :memo %><br />
+    <%= f.submit %>
+<% end %>
