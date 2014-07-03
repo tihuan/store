@@ -32,6 +32,11 @@ ActiveRecord::Schema.define(version: 20140702230546) do
   add_index "accounts", ["email"], name: "index_accounts_on_email", unique: true, using: :btree
 
   create_table "appointments", force: true do |t|
+    t.string   "date"
+    t.string   "hour"
+    t.string   "complete",   default: "F"
+    t.integer  "account_id"
+    t.integer  "service_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
