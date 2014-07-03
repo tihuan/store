@@ -12,14 +12,9 @@
   </ul>
 <% end %>
 
-<%= form_for @appointment, html: {id: id='create-appointment-form'} do |f| %>
-    First name: <%= f.text_field :fname %><br />
-    Last name : <%= f.text_field :lname %><br />
-    Birthday : <%= f.text_field :birthdate %><br />
-    Email : <%= f.text_field :email %><br />
-    Phone : <%= f.text_field :phone %><br />
-    Address : <%= f.text_field :address %><br />
-    Password : <%= f.password_field :password %><br />
-    Memo : <%= f.text_area :memo %><br />
+<%= form_for @appointment, html: { id: id='create-appointment-form' } do |f| %>
+    Service : <%= f.text_field :service_id %><br />
+    Date : <%= f.text_field :date %><br />
+    Hour : <%= f.text_field :hour %><br />
     <%= f.submit %>
 <% end %>
