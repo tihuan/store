@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'jquery-turbolinks' # Resolve turbolinks mess with JQuery
+gem "jquery-ui-rails" # For date and hour picker in create appointment
+
 gem 'money-rails' # handles lib/money_attributes module
 gem 'bcrypt', '~> 3.1.7'
 
