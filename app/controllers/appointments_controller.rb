@@ -17,7 +17,7 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @appointment = Appointment.create(params[:appointments])
+    @appointment = Appointment.create(appointment_params)
     if @appointment.save
       redirect_to new_appointment_path
     else
@@ -27,6 +27,12 @@ class AppointmentsController < ApplicationController
       end
 
       redirect_to new_appointment_path, :flash => { :alert => "#{err}, please try again" }
-      end
     end
+  end
+
+private
+
+  def appointment_params
+    params.require(:appointments).permit!
+  end
 end

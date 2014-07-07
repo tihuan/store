@@ -63,12 +63,13 @@ function findHours(chosen_date){
 function nextPage(hour, id){
   $('#hour_picker').hide();
   $("#appointment_form").show();
-  document.getElementById('appointments_date').value = setFinalDate;
-  document.getElementById('appointments_hour').value = hour;
   $('#cal_previous2').show();
   document.getElementById('subData').style.display = 'block'
   $('#final_date h2').append(setFinalDate);
   $('#final_hour h2').append(id);
+  $('#appointment_hour').val(id);
+  $('#schedules_date').val(setFinalDate);
+  $('#appointments_hour').val(hour);
   pageNo = '3';
   return true;
 };
