@@ -36,8 +36,9 @@ $(function () {
     onSelect: function(dateText) {
       setFinalDate = dateText
       $('#hour_picker').show();
-      $('#datepicker').hide();
+      // $('#datepicker').hide();
       findHours(setFinalDate);
+      $("th.selected_date").empty();
       $("th.selected_date").append("Date Chosen:" + " " + (setFinalDate));
       pageNo = '2';
     }
@@ -65,11 +66,11 @@ function nextPage(hour, id){
   $("#appointment_form").show();
   $('#cal_previous2').show();
   document.getElementById('subData').style.display = 'block'
-  $('#final_date h2').append(setFinalDate);
-  $('#final_hour h2').append(id);
+  $('#final_date h2').text(setFinalDate);
+  $('#final_hour h2').text(id);
   $('#appointment_hour').val(id);
-  $('#schedules_date').val(setFinalDate);
   $('#appointments_hour').val(hour);
+  $('#schedules_date').val(setFinalDate);
   pageNo = '3';
   return true;
 };
