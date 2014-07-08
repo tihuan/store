@@ -3,8 +3,7 @@ Hello World!
 <% @accounts.each_with_index do |a, i| %>
   <p>
     Member ID: <%= i %>
-    First Name: <%= a.fname %>
-    Last Name: <%= a.lname %>
+    <%= a.fname %> <%= a.lname %>
   </p>
 <% end %>
 
