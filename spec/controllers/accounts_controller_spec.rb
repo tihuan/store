@@ -31,12 +31,7 @@ describe AccountsController, type: :controller do
       get :show, id: account1.id
       expect(response).to render_template(:show)
     end
-
-    it 'assigns the requested city to @city' do
-      get :show, id: account1.id
-      expect(assigns(:account)).to eq(account1)
-    end
-end
+  end
 
   describe 'POST #create' do
     context 'when account attributes are valid' do
