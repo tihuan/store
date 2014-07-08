@@ -1,50 +1,42 @@
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+<head>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+</head>
+<body>
+  <h3>Create New Appointment</h3>
 
-<h3>Create New Appointment</h3>
+  <% if flash[:alert] %>
+  <h2 class="notice"><%= flash[:alert] %></h2>
+  <% end %>
 
-<% if flash[:alert] %>
-<h2 class="notice"><%= flash[:alert] %></h2>
-<% end %>
-
-<% if @appointment.errors.any? %>
-  <ul>
-    <% @appointment.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%= form_for @appointment, html: { id: id='create-appointment-form' } do |f| %>
-    Service : <%= f.text_field :service_id %><br />
-    Date : <%= f.text_field :date, id: 'datepicker' %><br />
-    Hour : <%= f.text_field :hour %><br />
-<% end %>
-
-    <script>
-      $(function() {
-      $( "#datepicker" ).datepicker();
-      });
-    </script>
-  </head>
-  <body>
-
-    <%= render "hour_picker" %>
-
-    <div id='cal_previous2'><button class='btn' onclick='prevPage();'>back</button></div><br />
-
-    <div id="appointment_form">
-      <%= form_tag("/appointments", :method => "post") do %>
-        <label for="appointments_date">scheduled date</label><br>
-        <div id = "final_date"><h2></h2></div>
-        <input id="schedules_date" name="appointments[date]" type="hidden" /><br>
-
-        <label for="appointments_hour">scheduled hour</label><br>
-        <div id = "final_hour"><h2></h2></div>
-        <input id="appointments_hour" name="appointments[hour]" type="hidden" /><br>
-
-        <input type="submit" name="btn" value="Submit" class = 'btn' id="subData" style="display:none;">
+  <% if @appointment.errors.any? %>
+    <ul>
+      <% @appointment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
       <% end %>
-    </div>
+    </ul>
+  <% end %>
 
-  </body>
-  </html>
+  <%= form_for @appointment, html: { id: id='create-appointment-form' } do |f| %>
+      Service : <%= f.text_field :service_id %><br />
+      Date : <%= f.text_field :date, id: 'datepicker' %><br />
+      Hour : <%= f.text_field :hour %><br />
+  <% end %>
+
+  <%= render "hour_picker" %>
+
+  <div id='cal_previous2'><button class='btn' onclick='prevPage();'>back</button></div><br />
+
+  <div id="appointment_form">
+    <%= form_tag("/appointments", :method => "post") do %>
+      <label for="appointments_date">scheduled date</label><br>
+      <div id = "final_date"><h2></h2></div>
+      <input id="schedules_date" name="appointments[date]" type="hidden" />
+
+      <label for="appointments_hour">scheduled hour</label><br>
+      <div id = "final_hour"><h2></h2></div>
+      <input id="appointments_hour" name="appointments[hour]" type="hidden" />
+
+      <input type="submit" name="btn" value="Submit" class = 'btn' id="subData" style="display:none;">
+    <% end %>
+  </div>
+</body>
