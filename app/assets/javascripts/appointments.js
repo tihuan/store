@@ -30,6 +30,12 @@ $(function () {
   var day = currentTime.getDate();
   var year = currentTime.getFullYear();
 
+  $("#appointment_hour").on('click', function() {
+    if ($("#datepicker").val() !== '') {
+      prevPage();
+    }
+  });
+
   $("#datepicker").datepicker({
     minDate: new Date(year, month, day),
     dateFormat: 'yy-mm-dd',
