@@ -35,10 +35,8 @@ $(function () {
     dateFormat: 'yy-mm-dd',
     onSelect: function(dateText) {
       setFinalDate = dateText
-      $('#cal_previous2').hide();
-      $('#appointment_form').hide();
+      hideHourPicker();
       findHours(setFinalDate);
-      $('#appointment_hour').val('');
       $("th.selected_date").empty();
       $("th.selected_date").append("Date Chosen:" + " " + (setFinalDate));
       pageNo = '2';
@@ -70,19 +68,28 @@ function nextPage(hour, id){
   $("#appointment_form").show();
   $('#cal_previous2').show();
   document.getElementById('subData').style.display = 'block'
-  $('#final_date h2').text(setFinalDate);
-  $('#final_hour h2').text(id);
-  $('#appointment_hour').val(id);
-  $('#appointments_hour').val(hour);
-  $('#schedules_date').val(setFinalDate);
+  setDateAndHour(hour, id);
   pageNo = '3';
   return true;
 };
 
 function prevPage() {
   setFinalHour = "";
-  $('#appointment_form').hide();
-  $('#cal_previous2').hide();
+  hideHourPicker();
   $("#hour_picker").show();
   pageNo = '2'
 };
+
+function hideHourPicker() {
+  $('#appointment_form').hide();
+  $('#cal_previous2').hide();
+  $('#appointment_hour').val('');
+}
+
+function setDateAndHour(hour, id) {
+  $('#final_date h2').text(setFinalDate);
+  $('#final_hour h2').text(id);
+  $('#appointment_hour').val(id);
+  $('#appointments_hour').val(hour);
+  $('#schedules_date').val(setFinalDate);
+}
