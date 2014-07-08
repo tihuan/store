@@ -26,5 +26,14 @@ describe AccountsController, type: :controller do
       get :show, id: account1.id
       expect(assigns(:account)).to eq(account1)
     end
+end
+
+  describe "POST #create" do
+    it "redirects to show page" do
+      post :create, account: attributes_for(:account)
+      expect(response).to redirect_to(account_path(assigns[:account]))
+    end
+
+
   end
 end
