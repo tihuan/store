@@ -12,5 +12,10 @@ ActiveRecord::Base.transaction do
         password: Faker::Internet.password,
         memo: Faker::Company.bs
       )
+
+      Service.create(
+        name: Faker::Commerce.product_name,
+        price_in_cents: Faker::Address.building_number
+      )
   end
 end
