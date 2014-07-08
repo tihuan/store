@@ -35,8 +35,6 @@ $(function () {
     dateFormat: 'yy-mm-dd',
     onSelect: function(dateText) {
       setFinalDate = dateText
-      $('#hour_picker').show();
-      // $('#datepicker').hide();
       findHours(setFinalDate);
       $("th.selected_date").empty();
       $("th.selected_date").append("Date Chosen:" + " " + (setFinalDate));
@@ -52,11 +50,14 @@ function findHours(chosen_date){
     dataType: "json",
     data: { matched_date:chosen_date },
     success: function(resp){
+      $('#hour_picker').hide();
       var hours_string = resp;
+      $(".cal_table2 td").removeAttr("style");
       for (var j in hours_string) {
         (final_array = '\.'+ hours_string[j]);
         $(final_array).hide();
       }
+      $('#hour_picker').show();
     }
   });
 };
