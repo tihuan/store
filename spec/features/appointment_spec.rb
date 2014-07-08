@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 feature "appointment" do
-  # let!(:account) { FactoryGirl.create(:account) }
 
   scenario "User creates an appointment" do
     visit root_path
