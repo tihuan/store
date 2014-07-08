@@ -10,16 +10,6 @@ describe AccountsController, type: :controller do
       expect(assigns(:accounts).last).to eq(account2)
     end
 
-    it 'assigns account to @account' do
-      get :show, id: account1.id
-      expect(assigns(:account)).to eq(account1)
-    end
-
-    it 'assigns account to @account' do
-      get :new
-      expect(assigns(:account).id).to eq(nil)
-    end
-
     it 'renders the :index view' do
       get :index
       expect(response).to render_template(:index)
@@ -27,9 +17,21 @@ describe AccountsController, type: :controller do
   end
 
   describe 'GET #show' do
+    it 'assigns account to @account' do
+      get :show, id: account1.id
+      expect(assigns(:account)).to eq(account1)
+    end
+
     it 'renders the show page' do
       get :show, id: account1.id
       expect(response).to render_template(:show)
+    end
+  end
+
+  describe "GET #new" do
+    it 'assigns account to @account' do
+      get :new
+      expect(assigns(:account).id).to eq(nil)
     end
   end
 
