@@ -33,24 +33,18 @@
     <div id='cal_previous2'><button class='btn' onclick='prevPage();'>back</button></div><br />
 
     <div id="appointment_form">
-                  <%= form_tag("/appointments", :method => "post") do %>
+      <%= form_tag("/appointments", :method => "post") do %>
+        <label for="appointments_date">scheduled date</label><br>
+        <div id = "final_date"><h2></h2></div>
+        <input id="schedules_date" name="appointments[date]" type="hidden" /><br>
 
-                                <br />
-                                <label for="appointments_date">scheduled date</label><br /><br />
-                                <div id = "final_date"><h2></h2></div>
-                                <input id="schedules_date" name="appointments[date]" type="hidden" />
-                                <br />
-                                <br />
+        <label for="appointments_hour">scheduled hour</label><br>
+        <div id = "final_hour"><h2></h2></div>
+        <input id="appointments_hour" name="appointments[hour]" type="hidden" /><br>
 
-                                <label for="appointments_hour">scheduled hour</label><br /><br />
-                                <div id = "final_hour"><h2></h2></div>
-                                <input id="appointments_hour" name="appointments[hour]" type="hidden" />
-                                <br />
-                                <br />
-
-                                <input type="submit" name="btn" value="Submit" class = 'btn' id="subData" style="display:none;">
-                   <% end %>
-
+        <input type="submit" name="btn" value="Submit" class = 'btn' id="subData" style="display:none;">
+      <% end %>
     </div>
+
   </body>
   </html>
