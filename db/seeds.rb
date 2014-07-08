@@ -17,5 +17,12 @@ ActiveRecord::Base.transaction do
         name: Faker::Commerce.product_name,
         price_in_cents: Faker::Address.building_number
       )
+
+      Appointment.create(
+        date: Faker::Business.credit_card_expiry_date,
+        hour: '1200',
+        account_id: rand(2),
+        service_id: rand(2),
+      )
   end
 end
