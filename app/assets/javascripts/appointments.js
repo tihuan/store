@@ -37,7 +37,7 @@ $(function () {
   });
 
   $(".cal_table2 td").on('click', function() {
-    nextPage('this.class', $(this).text());
+    nextPage($(this).attr('class'), $(this).text());
   })
 
   $("#datepicker").datepicker({
