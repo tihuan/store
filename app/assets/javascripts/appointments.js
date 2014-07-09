@@ -36,6 +36,10 @@ $(function () {
     }
   });
 
+  $(".cal_table2 td").on('click', function() {
+    nextPage('this.class', $(this).text());
+  })
+
   $("#datepicker").datepicker({
     minDate: new Date(year, month, day),
     dateFormat: 'yy-mm-dd',
