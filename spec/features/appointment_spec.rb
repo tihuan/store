@@ -1,10 +1,14 @@
 require 'spec_helper'
 
-feature "appointment" do
-
-  scenario "User creates an appointment" do
+feature 'User creates an appointment' do
+  scenario 'with valid attributes', js: true do
     visit root_path
-    click_link("Create Appointment")
-    expect(page).to have_css('#create-appointment-form')
+    expect {
+      click_link('Create Appointment')
+      find("#datepicker").click
+      find(".ui-datepicker-today").click
+      find('#hour_picker > table > tbody > tr:nth-child(2) > td').click
+      click_button('Submit')
+    }.to change(Appointment, :count).by(1)
   end
 end
