@@ -28,13 +28,17 @@
 
   <div id="appointment_form">
     <%= form_tag("/appointments", :method => "post") do %>
-      <label for="appointments_date">scheduled date</label><br>
-      <div id = "final_date"><h2></h2></div>
-      <input id="schedules_date" name="appointments[date]" type="hidden" />
+      <label for="appointments_service">Service Name</label><br>
+      <div id = "service_name"><h2></h2></div>
+      <input id="service_id" name="appointments[service_id]" type="hidden">
 
-      <label for="appointments_hour">scheduled hour</label><br>
+      <label for="appointments_date">Scheduled Date</label><br>
+      <div id = "final_date"><h2></h2></div>
+      <input id="appointments_date" name="appointments[date]" type="hidden">
+
+      <label for="appointments_hour">Scheduled Hour</label><br>
       <div id = "final_hour"><h2></h2></div>
-      <input id="appointments_hour" name="appointments[hour]" type="hidden" />
+      <input id="appointments_hour" name="appointments[hour]" type="hidden">
 
       <input type="submit" name="btn" value="Submit" class = 'btn' id="subData" style="display:none;">
     <% end %>
