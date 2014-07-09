@@ -17,7 +17,7 @@
   <% end %>
 
   <%= form_for @appointment, html: { id: id='create-appointment-form' } do |f| %>
-      Service : <%= f.text_field :service_id %><br />
+      Service : <%= f.select :service_id, options_for_select(@service_names) %><br />
       Date : <%= f.text_field :date, id: 'datepicker' %><br />
       Hour : <%= f.text_field :hour %><br />
   <% end %>
