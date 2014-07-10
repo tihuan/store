@@ -17,30 +17,13 @@
   <% end %>
 
   <%= form_for @appointment, html: { id: id='create-appointment-form' } do |f| %>
-      Service : <%= f.select :service_id, options_for_select(@service_names) %><br />
-      Date : <%= f.text_field :date, id: 'datepicker' %><br />
-      Hour : <%= f.text_field :hour %><br />
+    Service : <%= f.select :service_id, options_for_select(@service_names) %><br />
+    Date : <%= f.text_field :date, id: 'datepicker' %><br />
+    Hour : <%= f.text_field :hour %><br />
+    <%= submit_tag "Create Appointment", :id => 'submit_form', :style => "display: none;" %>
   <% end %>
 
   <%= render "hour_picker" %>
 
   <div id='cal_previous2'><button class='btn' onclick='prevPage();'>back</button></div><br />
-
-  <div id="appointment_form">
-    <%= form_tag("/appointments", :method => "post") do %>
-      <label for="appointments_service">Service Name</label><br>
-      <div id = "service_name"><h2></h2></div>
-      <input id="service_id" name="appointments[service_id]" type="hidden">
-
-      <label for="appointments_date">Scheduled Date</label><br>
-      <div id = "final_date"><h2></h2></div>
-      <input id="appointments_date" name="appointments[date]" type="hidden">
-
-      <label for="appointments_hour">Scheduled Hour</label><br>
-      <div id = "final_hour"><h2></h2></div>
-      <input id="appointments_hour" name="appointments[hour]" type="hidden">
-
-      <input type="submit" name="btn" value="Submit" class = 'btn' id="subData" style="display:none;">
-    <% end %>
-  </div>
 </body>
