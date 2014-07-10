@@ -39,7 +39,7 @@ describe AppointmentsController, type: :controller do
   describe 'POST #create' do
     context 'when appointment attributes are valid' do
       it 'redirects to show page' do
-        post :create, appointments: attributes_for(:appointment)
+        post :create, appointment: attributes_for(:appointment)
         expect(response).to redirect_to(new_appointment_path)
       end
     end
