@@ -1,11 +1,11 @@
-$(function () {
+$(function() {
   $('#hour_picker').hide();
   $('#hidden_hour_div').hide();
  });
 
 var disabledDays = [];
 
-$(function () {
+$(function() {
   $('.schedules_dates').map(function () {
     disabledDays.push(this.id);
   }).get().join(',');
@@ -22,7 +22,7 @@ function unavailableDays(date) {
  return [true];
 };
 
-$(function () {
+$(function() {
   var currentTime = new Date()
   var month = currentTime.getMonth();
   var day = currentTime.getDate();
