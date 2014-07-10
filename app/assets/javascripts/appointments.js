@@ -1,7 +1,6 @@
 $(function () {
   $('#hour_picker').hide();
   $('#hidden_hour_div').hide();
-  $('#cal_previous2').hide();
  });
 
 var disabledDays = [];
@@ -84,7 +83,6 @@ function findHours(chosen_date){
 
 function nextPage(hour, id){
   $('#hour_picker').hide();
-  $('#cal_previous2').show();
   setDateAndHour(hour, id);
   pageNo = '3';
   return true;
@@ -98,7 +96,6 @@ function prevPage() {
 };
 
 function hideHourPicker() {
-  $('#cal_previous2').hide();
   $('#appointment_hour').val('');
   $('#submit_form').hide();
 }
