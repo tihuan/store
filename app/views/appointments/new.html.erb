@@ -1,7 +1,7 @@
 <head>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
 </head>
-<body>
+
   <h3>Create New Appointment</h3>
 
   <% if flash[:alert] %>
@@ -21,7 +21,8 @@
     Date : <%= f.text_field :date, id: 'datepicker' %><br />
     Hour : <%= f.text_field :hour %><br />
     <%= submit_tag "Create Appointment", :id => 'submit_form', :style => "display: none;" %>
-  <% end %>
+  <% end %><br>
 
   <%= render "hour_picker" %>
-</body>
+
+<%= link_to('Home', root_path) %>
