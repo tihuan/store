@@ -8,7 +8,7 @@ feature 'User creates an appointment' do
       find("#datepicker").click
       find(".ui-datepicker-today").click
       find('#hour_picker > table > tbody > tr:nth-child(2) > td').click
-      click_button('Submit')
+      click_button('Create Appointment')
     }.to change(Appointment, :count).by(1)
   end
 end
