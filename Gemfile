@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'simple_form'
+
 gem 'jquery-turbolinks' # Resolve turbolinks mess with JQuery
 gem "jquery-ui-rails" # For date and hour picker in create appointment
 
