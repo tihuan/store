@@ -1,27 +1,30 @@
-<h3>Create New Account</h3>
+<div class="center-block col-lg-6">
+  <h3>Create New Account</h3>
 
-<% if flash[:alert] %>
-<h2 class="notice"><%= flash[:alert] %></h2>
-<% end %>
+  <% if flash[:alert] %>
+  <h2 class="notice"><%= flash[:alert] %></h2>
+  <% end %>
 
-<% if @account.errors.any? %>
-  <ul>
-    <% @account.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
+  <% if @account.errors.any? %>
+    <ul>
+      <% @account.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+    <%= simple_form_for @account, html: { class: 'form-horizontal', id: 'create-account-form' } do |f| %>
+      <%= f.input :fname, label: 'First Name' %>
+      <%= f.input :lname, label: 'Last Name' %>
+      <%= f.input :email %>
+      <%= f.input :password %>
+      <%= f.input :birthdate, label: 'Birth Day' %>
+      <%= f.input :phone %>
+      <%= f.input :address %>
+      <%= f.input :memo %>
+      <%= f.submit %>
+    <% end %><br>
 
-<%= form_for @account, html: { id: id='create-account-form' } do |f| %>
-<p>First Name: <%= f.text_field :fname %></p>
-<p>Last Name: <%= f.text_field :lname %></p>
-<p>Birthday: <%= f.text_field :birthdate %></p>
-<p>Email: <%= f.text_field :email %></p>
-<p>Phone: <%= f.text_field :phone %></p>
-<p>Address: <%= f.text_field :address %></p>
-<p>Password: <%= f.password_field :password %></p>
-<p>Memo: <%= f.text_area :memo %></p>
-    <%= f.submit %>
-<% end %><br>
+  <%= link_to('Home', root_path) %>
+</div>
 
-<%= link_to('Home', root_path) %>
+
