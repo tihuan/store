@@ -2,6 +2,7 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
 </head>
 
+<div class="center-block col-lg-4">
   <h3>Create New Appointment</h3>
 
   <% if flash[:alert] %>
@@ -16,13 +17,20 @@
     </ul>
   <% end %>
 
-  <%= form_for @appointment, html: { id: id='create-appointment-form' } do |f| %>
-    Service : <%= f.select :service_id, options_for_select(@service_names) %><br />
-    Date : <%= f.text_field :date, id: 'datepicker' %><br />
-    Hour : <%= f.text_field :hour %><br />
-    <%= submit_tag "Create Appointment", :id => 'submit_form', :style => "display: none;" %>
-  <% end %><br>
+  <%= simple_form_for(@appointment, html: {class: 'form-horizontal', id:'appointment-form' }) do |f| %>
+
+    <%= f.input :service_id do %>
+      <%= f.select :service_id, options_for_select(@service_names) %>
+    <% end %>
+
+    <%= f.input :date, placeholder: "#{Date.today}", input_html: { id: 'datepicker' } %>
+
+    <%= f.input :hour, placeholder: '12:00 pm' %>
+
+    <%= f.submit "Create Appointment", :id => 'submit_form', :style => "display: none;" %>
+  <% end %>
 
   <%= render "hour_picker" %>
 
-<%= link_to('Home', root_path) %>
+  <%= link_to('Home', root_path) %>
+</div>
