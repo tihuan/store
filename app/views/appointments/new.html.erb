@@ -17,7 +17,7 @@
     </ul>
   <% end %>
 
-  <%= simple_form_for(@appointment, html: {class: 'form-horizontal', id:'appointment-form' }) do |f| %>
+  <%= simple_form_for(@appointment, html: { class: 'form-horizontal', id:'appointment-form' }) do |f| %>
 
     <%= f.input :service_id do %>
       <%= f.select :service_id, options_for_select(@service_names) %>
