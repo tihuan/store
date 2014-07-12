@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'modernizr-rails' # Make parallax works as expected
+gem 'skrollr-rails'
+
 gem 'simple_form'
 
 gem 'jquery-turbolinks' # Resolve turbolinks mess with JQuery

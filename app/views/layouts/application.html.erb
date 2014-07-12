@@ -11,7 +11,7 @@
     <title>Store</title>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag :modernizr %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -45,5 +45,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </body>
 </html>
