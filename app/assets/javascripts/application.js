@@ -11,9 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require skrollr
+//= require parallax/imagesloaded
+//= require parallax/_main
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
 //= require jquery-ui
+
